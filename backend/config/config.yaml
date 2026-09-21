@@ -1,0 +1,24 @@
+paths:
+  raw_data: data/ml-1m
+  processed_data: data/processed
+  model_dir: models
+  results_dir: results
+spark:
+  app_name: FairLens
+  master: local[*]
+  shuffle_partitions: 8
+  driver_memory: 4g
+als:
+  rank: 20
+  max_iter: 10
+  reg_param: 0.1
+  seed: 42
+evaluation:
+  top_k: 10
+  relevance_threshold: 4.0
+reranking:
+  candidate_multiplier: 5
+  diversity_weight: 0.12
+  fairness_weight: 0.08
+  popularity_weight: 0.10
+
